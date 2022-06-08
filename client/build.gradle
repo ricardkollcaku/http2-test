@@ -10,12 +10,17 @@ sourceCompatibility = '17'
 
 repositories {
 	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url "https://repo.spring.io/snapshot" }
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
+	implementation "io.projectreactor.netty:reactor-netty-core:1.0.20-SNAPSHOT"
+	implementation "io.projectreactor.netty:reactor-netty-http:1.0.20-SNAPSHOT"
+	implementation 'io.projectreactor:reactor-core:3.5.0-SNAPSHOT'
 }
 
 tasks.named('test') {
